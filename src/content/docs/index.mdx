@@ -1,0 +1,33 @@
+---
+title: Strata Documentation
+description: Procedural worlds, infinite possibilities
+template: splash
+hero:
+  tagline: Procedural worlds, infinite possibilities
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Getting Started
+      link: /getting-started/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/strata-game-library
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Explore
+
+<CardGrid stagger>
+	<Card title="API Reference" icon="open-book">
+		Explore the Strata API.
+	</Card>
+	<Card title="Examples and Tutorials" icon="pencil">
+		Learn by doing with these examples and tutorials.
+	</Card>
+	<Card title="Package Docs" icon="setting">
+		Documentation for Strata packages.
+	</Card>
+</CardGrid>
