@@ -196,7 +196,7 @@ interface WaterPresetOptions {
 ## Using with Components
 
 ```tsx
-import { Water, AdvancedWater } from '@jbcom/strata';
+import { Water, AdvancedWater } from '@strata/core';
 import { WaterPresets } from '@strata/presets/water';
 
 function Scene() {

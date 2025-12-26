@@ -10,7 +10,7 @@ Strata's vegetation system uses GPU instancing to render 10,000+ instances of gr
 ## Quick Start
 
 ```tsx
-import { GrassInstances, TreeInstances, RockInstances } from '@jbcom/strata';
+import { GrassInstances, TreeInstances, RockInstances } from '@strata/core';
 
 <GrassInstances count={10000} spread={100} />
 <TreeInstances count={500} spread={200} />
@@ -24,7 +24,7 @@ import { GrassInstances, TreeInstances, RockInstances } from '@jbcom/strata';
 GPU-instanced grass with wind animation:
 
 ```tsx
-import { GrassInstances } from '@jbcom/strata';
+import { GrassInstances } from '@strata/core';
 
 <GrassInstances
   // Instance count
@@ -74,7 +74,7 @@ import { GrassInstances } from '@jbcom/strata';
 GPU-instanced trees with variety:
 
 ```tsx
-import { TreeInstances } from '@jbcom/strata';
+import { TreeInstances } from '@strata/core';
 
 <TreeInstances
   // Instance count
@@ -126,7 +126,7 @@ import { TreeInstances } from '@jbcom/strata';
 GPU-instanced rocks and boulders:
 
 ```tsx
-import { RockInstances } from '@jbcom/strata';
+import { RockInstances } from '@strata/core';
 
 <RockInstances
   // Instance count
@@ -161,7 +161,7 @@ import { RockInstances } from '@jbcom/strata';
 Generic GPU instancing for any mesh:
 
 ```tsx
-import { GPUInstancedMesh } from '@jbcom/strata';
+import { GPUInstancedMesh } from '@strata/core';
 
 <GPUInstancedMesh
   geometry={customGeometry}
@@ -272,7 +272,7 @@ const terrainRef = useRef();
 ### Wind Zones
 
 ```tsx
-import { WindZone } from '@jbcom/strata';
+import { WindZone } from '@strata/core';
 
 <WindZone
   position={[50, 0, 50]}
@@ -346,7 +346,7 @@ Trees become billboards at distance:
 ### Custom Grass Geometry
 
 ```tsx
-import { createGrassGeometry } from '@jbcom/strata/core';
+import { createGrassGeometry } from '@strata/core';
 
 const customGrass = createGrassGeometry({
   segments: 5,

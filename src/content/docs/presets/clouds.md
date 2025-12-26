@@ -89,7 +89,7 @@ CloudPresets.CUMULONIMBUS = {
 ## Using with Components
 
 ```tsx
-import { Clouds, ProceduralSky } from '@jbcom/strata';
+import { Clouds, ProceduralSky } from '@strata/core';
 import { CloudPresets, SkyPresets } from '@strata/presets';
 
 <ProceduralSky {...SkyPresets.AFTERNOON} />

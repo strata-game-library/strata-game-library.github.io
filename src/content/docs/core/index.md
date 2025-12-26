@@ -5,7 +5,7 @@ description: Overview of all Strata core features and components
 
 # Core Features
 
-The `@jbcom/strata` package provides a comprehensive set of procedural 3D graphics features for React Three Fiber. This section covers all the core capabilities.
+The `@strata/core` package provides a comprehensive set of procedural 3D graphics features for React Three Fiber. This section covers all the core capabilities.
 
 ## Feature Overview
 
@@ -68,7 +68,7 @@ import {
   createWaterMaterial,
   createSkyMaterial,
   createRaymarchingMaterial,
-} from '@jbcom/strata';
+} from '@strata/core';
 ```
 
 ## Complete Scene Example
@@ -85,7 +85,7 @@ import {
   TreeInstances,
   RockInstances,
   VolumetricFogMesh
-} from '@jbcom/strata';
+} from '@strata/core';
 
 function CompleteScene() {
   return (
@@ -157,9 +157,9 @@ Beyond components, Strata exposes core algorithms for advanced use cases:
 ### SDF Operations
 
 ```tsx
-import { sdSphere, sdBox, opSmoothUnion } from '@jbcom/strata/core';
+import { sdSphere, sdBox, opSmoothUnion } from '@strata/core';
 
-function customTerrain(point: Vector3): number {
+function customTerrain(point: [number, number, number]): number {
   const sphere = sdSphere(point, [0, 0, 0], 10);
   const box = sdBox(point, [5, 5, 5], [3, 3, 3]);
   return opSmoothUnion(sphere, box, 0.5);
@@ -169,7 +169,7 @@ function customTerrain(point: Vector3): number {
 ### Noise Generation
 
 ```tsx
-import { noise3D, fbm } from '@jbcom/strata/core';
+import { noise3D, fbm } from '@strata/core';
 
 function generateHeight(x: number, z: number): number {
   return fbm(x * 0.02, 0, z * 0.02, {
@@ -183,7 +183,7 @@ function generateHeight(x: number, z: number): number {
 ### Marching Cubes
 
 ```tsx
-import { marchingCubes, createGeometryFromMarchingCubes } from '@jbcom/strata/core';
+import { marchingCubes, createGeometryFromMarchingCubes } from '@strata/core';
 
 const geometry = createGeometryFromMarchingCubes({
   bounds: { min: [-50, -50, -50], max: [50, 50, 50] },

@@ -10,7 +10,7 @@ Strata's water system provides realistic water rendering with Gerstner wave simu
 ## Quick Start
 
 ```tsx
-import { Water } from '@jbcom/strata';
+import { Water } from '@strata/core';
 
 <Water size={200} depth={20} />
 ```
@@ -22,7 +22,7 @@ import { Water } from '@jbcom/strata';
 Standard water component with good performance:
 
 ```tsx
-import { Water } from '@jbcom/strata';
+import { Water } from '@strata/core';
 
 <Water
   // Size and position
@@ -61,7 +61,7 @@ import { Water } from '@jbcom/strata';
 Full-featured water with all effects:
 
 ```tsx
-import { AdvancedWater } from '@jbcom/strata';
+import { AdvancedWater } from '@strata/core';
 
 <AdvancedWater
   // Size
@@ -213,7 +213,7 @@ Wave foam with shore foam:
 Full underwater experience:
 
 ```tsx
-import { UnderwaterOverlay } from '@jbcom/strata';
+import { UnderwaterOverlay } from '@strata/core';
 
 function Scene() {
   const [isUnderwater, setIsUnderwater] = useState(false);
@@ -242,7 +242,7 @@ function Scene() {
 Use water materials directly with Three.js:
 
 ```tsx
-import { createWaterMaterial, createAdvancedWaterMaterial } from '@jbcom/strata/core';
+import { createWaterMaterial, createAdvancedWaterMaterial } from '@strata/core';
 import * as THREE from 'three';
 
 // Simple water material
@@ -313,10 +313,18 @@ const lake = createWaterPreset(WaterTypes.LAKE);
 
 ### River
 
-```tsx
-import { River } from '@jbcom/strata';
+Rivers can be created using the `Water` component with flow configuration:
 
-<River
+```tsx
+import { Water } from '@strata/core';
+import { createWaterPreset, WaterTypes } from '@strata/presets/water';
+
+// Get river preset with directional flow
+const river = createWaterPreset(WaterTypes.RIVER);
+
+<Water 
+  {...river}
+  // Define river path as a spline
   path={[
     [0, 0, 0],
     [50, 0, 20],

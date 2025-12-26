@@ -5,7 +5,7 @@ description: TypeScript type definitions API reference
 
 # Types API
 
-TypeScript type definitions. Import from `@jbcom/strata/types`.
+TypeScript type definitions. Import from `@strata/core/types`.
 
 ## Terrain Types
 

@@ -132,7 +132,7 @@ interface TerrainPresetOptions {
 ## Using with Components
 
 ```tsx
-import { Terrain } from '@jbcom/strata';
+import { Terrain } from '@strata/core';
 import { TerrainPresets } from '@strata/presets/terrain';
 
 function Scene() {

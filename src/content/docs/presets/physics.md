@@ -88,7 +88,7 @@ PhysicsPresets.PLATFORMER = {
 ## Using with Components
 
 ```tsx
-import { PhysicsWorld, RigidBody } from '@jbcom/strata';
+import { PhysicsWorld, RigidBody } from '@strata/core';
 import { PhysicsPresets } from '@strata/presets/physics';
 
 <PhysicsWorld {...PhysicsPresets.REALISTIC}>

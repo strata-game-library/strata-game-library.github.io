@@ -38,14 +38,14 @@ import type {
   WaterConfig, 
   SkyConfig,
   TerrainChunk 
-} from '@jbcom/strata/types';
+} from '@strata/core/types';
 
 import { 
   clamp, 
   lerp, 
   smoothstep,
   vec3 
-} from '@jbcom/strata/utils';
+} from '@strata/core/utils';
 ```
 
 ## Layer 1: GLSL Shaders
@@ -95,7 +95,7 @@ import {
   opUnion,
   opSubtraction,
   opSmoothUnion 
-} from '@jbcom/strata/core';
+} from '@strata/core';
 
 // Combine shapes
 const scene = opSmoothUnion(
@@ -112,7 +112,7 @@ import {
   noise3D, 
   fbm, 
   warpedFbm 
-} from '@jbcom/strata/core';
+} from '@strata/core';
 
 // Generate terrain height
 const height = fbm(x * 0.01, 0, z * 0.01, {
@@ -129,7 +129,7 @@ import {
   marchingCubes, 
   createGeometryFromMarchingCubes,
   generateTerrainChunk 
-} from '@jbcom/strata/core';
+} from '@strata/core';
 
 // Generate terrain mesh
 const geometry = generateTerrainChunk({
@@ -148,7 +148,7 @@ import {
   createAdvancedWaterMaterial,
   createSkyMaterial,
   createRaymarchingMaterial
-} from '@jbcom/strata/core';
+} from '@strata/core';
 
 const waterMaterial = createWaterMaterial({
   color: new THREE.Color(0x0077be),
@@ -164,7 +164,7 @@ High-level React Three Fiber components that wrap the core algorithms.
 ### Water Components
 
 ```tsx
-import { Water, AdvancedWater } from '@jbcom/strata';
+import { Water, AdvancedWater } from '@strata/core';
 
 <Water size={100} depth={20} />
 <AdvancedWater 
@@ -183,7 +183,7 @@ import {
   TreeInstances, 
   RockInstances,
   GPUInstancedMesh 
-} from '@jbcom/strata';
+} from '@strata/core';
 
 <GrassInstances count={10000} spread={100} />
 <TreeInstances count={500} spread={200} />
@@ -192,7 +192,7 @@ import {
 ### Sky Components
 
 ```tsx
-import { ProceduralSky } from '@jbcom/strata';
+import { ProceduralSky } from '@strata/core';
 
 <ProceduralSky 
   sunPosition={[100, 50, 100]}
@@ -209,7 +209,7 @@ import {
   VolumetricFogMesh, 
   UnderwaterOverlay,
   EnhancedFog 
-} from '@jbcom/strata';
+} from '@strata/core';
 
 <VolumetricFogMesh density={0.02} />
 <UnderwaterOverlay depth={10} />
@@ -242,29 +242,29 @@ import {
   useGameState,
   useCharacterController,
   useInventory 
-} from '@jbcom/strata/game';
+} from '@strata/core/game';
 ```
 
 ## Package Structure
 
 Strata is organized as multiple packages for flexibility:
 
-### Main Package (`@jbcom/strata`)
+### Main Package (`@strata/core`)
 
 The core library with components, algorithms, and utilities:
 
 ```tsx
 // Main package - components
-import { Water, ProceduralSky, Terrain, GrassInstances } from '@jbcom/strata';
+import { Water, ProceduralSky, Terrain, GrassInstances } from '@strata/core';
 
 // Subpath: Core algorithms
-import { marchingCubes, noise3D, sdSphere } from '@jbcom/strata/core';
+import { marchingCubes, noise3D, sdSphere } from '@strata/core';
 
 // Subpath: Utility functions
-import { clamp, lerp, smoothstep } from '@jbcom/strata/utils';
+import { clamp, lerp, smoothstep } from '@strata/core/utils';
 
 // Subpath: TypeScript types
-import type { BiomeConfig, WaterConfig } from '@jbcom/strata/types';
+import type { BiomeConfig, WaterConfig } from '@strata/core/types';
 ```
 
 ### Shaders Package (`@strata/shaders`)
@@ -282,7 +282,7 @@ import {
 
 ### Presets Package (`@strata/presets`)
 
-Pre-configured settings (requires `@jbcom/strata`):
+Pre-configured settings (requires `@strata/core`):
 
 ```tsx
 import { createTerrainPreset, TerrainBiomes } from '@strata/presets/terrain';
@@ -304,7 +304,7 @@ import { useDevice, useInput } from '@strata/capacitor-plugin/react';
 ## Directory Structure
 
 ```
-@jbcom/strata/
+@strata/core/
 ├── src/
 │   ├── api/          # Public API contracts
 │   ├── components/   # React Three Fiber components

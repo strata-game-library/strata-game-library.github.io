@@ -10,7 +10,7 @@ Strata provides volumetric rendering for fog, god rays, underwater effects, and 
 ## Quick Start
 
 ```tsx
-import { VolumetricFogMesh } from '@jbcom/strata';
+import { VolumetricFogMesh } from '@strata/core';
 
 <VolumetricFogMesh density={0.02} color="#8899aa" />
 ```
@@ -22,7 +22,7 @@ import { VolumetricFogMesh } from '@jbcom/strata';
 Height-based volumetric fog:
 
 ```tsx
-import { VolumetricFogMesh } from '@jbcom/strata';
+import { VolumetricFogMesh } from '@strata/core';
 
 <VolumetricFogMesh
   // Fog parameters
@@ -65,7 +65,7 @@ import { VolumetricFogMesh } from '@jbcom/strata';
 Simple distance-based fog (post-processing):
 
 ```tsx
-import { EnhancedFog } from '@jbcom/strata';
+import { EnhancedFog } from '@strata/core';
 
 <EnhancedFog
   color="#aabbcc"
@@ -80,7 +80,7 @@ import { EnhancedFog } from '@jbcom/strata';
 Complete underwater effect:
 
 ```tsx
-import { UnderwaterOverlay } from '@jbcom/strata';
+import { UnderwaterOverlay } from '@strata/core';
 
 <UnderwaterOverlay
   // Fog
@@ -114,7 +114,7 @@ import { UnderwaterOverlay } from '@jbcom/strata';
 Volumetric light shafts:
 
 ```tsx
-import { GodRays } from '@jbcom/strata';
+import { GodRays } from '@strata/core';
 
 <GodRays
   // Light source
@@ -140,7 +140,7 @@ import { GodRays } from '@jbcom/strata';
 All-in-one volumetric controller:
 
 ```tsx
-import { VolumetricEffects } from '@jbcom/strata';
+import { VolumetricEffects } from '@strata/core';
 
 <VolumetricEffects
   // Fog
@@ -309,7 +309,7 @@ Light patterns on underwater surfaces:
 ### Basic Atmosphere
 
 ```tsx
-import { AtmosphericScattering } from '@jbcom/strata';
+import { AtmosphericScattering } from '@strata/core';
 
 <AtmosphericScattering
   sunPosition={[100, 50, 100]}
@@ -373,24 +373,35 @@ Use volumetric shaders directly:
 
 ```tsx
 import {
+  // Fog shader is exported as an object with vertex and fragment properties
   volumetricFogShader,
+  // God rays shaders are exported separately
   godRaysVertexShader,
   godRaysFragmentShader,
+  // Underwater shader is also an object
   underwaterShader
 } from '@strata/shaders';
+import * as THREE from 'three';
+import { useThree } from '@react-three/fiber';
 
-const fogMaterial = new THREE.ShaderMaterial({
-  vertexShader: volumetricFogShader.vertex,
-  fragmentShader: volumetricFogShader.fragment,
-  uniforms: {
-    uDensity: { value: 0.02 },
-    uColor: { value: new THREE.Color('#8899aa') },
-    uCameraPos: { value: camera.position },
-    uTime: { value: 0 }
-  },
-  transparent: true,
-  depthWrite: false
-});
+function VolumetricFogCustom() {
+  const { camera } = useThree();
+  
+  const fogMaterial = new THREE.ShaderMaterial({
+    vertexShader: volumetricFogShader.vertex,
+    fragmentShader: volumetricFogShader.fragment,
+    uniforms: {
+      uDensity: { value: 0.02 },
+      uColor: { value: new THREE.Color('#8899aa') },
+      uCameraPos: { value: camera.position },
+      uTime: { value: 0 }
+    },
+    transparent: true,
+    depthWrite: false
+  });
+  
+  return <mesh material={fogMaterial}>{/* ... */}</mesh>;
+}
 ```
 
 ## Performance

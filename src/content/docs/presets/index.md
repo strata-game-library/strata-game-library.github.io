@@ -10,9 +10,9 @@ The `@strata/presets` package provides ready-to-use configurations for all Strat
 ## Installation
 
 ```bash
-npm install @strata/presets @jbcom/strata
+npm install @strata/presets @strata/core
 # or
-pnpm add @strata/presets @jbcom/strata
+pnpm add @strata/presets @strata/core
 ```
 
 ## Quick Start
@@ -54,7 +54,7 @@ const water = createWaterPreset(WaterTypes.OCEAN);
 ### With Components
 
 ```tsx
-import { Terrain, Water, ProceduralSky } from '@jbcom/strata';
+import { Terrain, Water, ProceduralSky } from '@strata/core';
 import { TerrainPresets, WaterPresets, SkyPresets } from '@strata/presets';
 
 <Terrain {...TerrainPresets.ISLAND} />

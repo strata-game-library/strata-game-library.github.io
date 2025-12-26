@@ -49,7 +49,7 @@ import type {
   WindConfig,
   DeviceProfile,
   InputSnapshot,
-} from '@jbcom/strata/types';
+} from '@strata/core/types';
 ```
 
 ## Component Props
@@ -57,7 +57,7 @@ import type {
 All components have typed props:
 
 ```tsx
-import { Water, type WaterProps } from '@jbcom/strata';
+import { Water, type WaterProps } from '@strata/core';
 
 const waterConfig: WaterProps = {
   size: 200,
@@ -105,7 +105,7 @@ useFrame(() => {
 Extend existing types:
 
 ```typescript
-import type { BiomeConfig } from '@jbcom/strata/types';
+import type { BiomeConfig } from '@strata/core/types';
 
 interface AlienBiomeConfig extends BiomeConfig {
   crystalDensity: number;

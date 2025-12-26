@@ -49,7 +49,7 @@ import {
   ProceduralSky,
   VolumetricFogMesh,
   createTimeOfDay,
-} from '@jbcom/strata';
+} from '@strata/core';
 import { OrbitControls } from '@react-three/drei';
 
 function FullScene() {

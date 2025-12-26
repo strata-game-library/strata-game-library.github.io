@@ -19,25 +19,25 @@ Strata requires React Three Fiber and Three.js as peer dependencies. This guide 
 ### Using pnpm (Recommended)
 
 ```bash
-pnpm add @jbcom/strata @react-three/fiber @react-three/drei three
+pnpm add @strata/core @react-three/fiber @react-three/drei three
 ```
 
 ### Using npm
 
 ```bash
-npm install @jbcom/strata @react-three/fiber @react-three/drei three
+npm install @strata/core @react-three/fiber @react-three/drei three
 ```
 
 ### Using yarn
 
 ```bash
-yarn add @jbcom/strata @react-three/fiber @react-three/drei three
+yarn add @strata/core @react-three/fiber @react-three/drei three
 ```
 
 ### Using bun
 
 ```bash
-bun add @jbcom/strata @react-three/fiber @react-three/drei three
+bun add @strata/core @react-three/fiber @react-three/drei three
 ```
 
 ## TypeScript Support
@@ -63,7 +63,7 @@ pnpm add @strata/shaders
 For pre-configured terrain, weather, and effects:
 
 ```bash
-pnpm add @strata/presets @jbcom/strata
+pnpm add @strata/presets @strata/core
 ```
 
 ### Mobile Plugins
@@ -121,7 +121,7 @@ Create a simple test scene to verify everything is working:
 
 ```tsx
 import { Canvas } from '@react-three/fiber';
-import { Water, ProceduralSky } from '@jbcom/strata';
+import { Water, ProceduralSky } from '@strata/core';
 import { OrbitControls } from '@react-three/drei';
 
 function App() {

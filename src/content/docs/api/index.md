@@ -11,7 +11,7 @@ This section provides complete API documentation for all Strata packages.
 
 | Package | Description | Docs |
 |---------|-------------|------|
-| `@jbcom/strata` | Core library with components and algorithms | This page |
+| `@strata/core` | Core library with components and algorithms | This page |
 | `@strata/shaders` | Standalone GLSL shader collection | [Shaders](/shaders/) |
 | `@strata/presets` | Pre-configured settings | [Presets](/presets/) |
 | `@strata/react-native-plugin` | React Native mobile plugin | [React Native](/mobile/react-native/) |
@@ -62,7 +62,7 @@ import {
   // Molecular
   MoleculeRenderer,
   AtomicParticles,
-} from '@jbcom/strata';
+} from '@strata/core';
 ```
 
 ### Hooks
@@ -71,7 +71,7 @@ import {
 import {
   useAnimationBlend,
   useFurInteraction,
-} from '@jbcom/strata';
+} from '@strata/core';
 ```
 
 ### Core Functions
@@ -136,7 +136,7 @@ import {
   // Fur
   createFurSystem,
   createGrassGeometry,
-} from '@jbcom/strata/core';
+} from '@strata/core';
 ```
 
 ### Types
@@ -169,7 +169,7 @@ import type {
   // General
   Vector3,
   Color,
-} from '@jbcom/strata/types';
+} from '@strata/core/types';
 ```
 
 ## API Sections

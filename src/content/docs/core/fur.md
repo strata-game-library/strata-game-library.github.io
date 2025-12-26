@@ -10,7 +10,7 @@ Strata provides GPU-accelerated fur rendering using the shell technique, capable
 ## Quick Start
 
 ```tsx
-import { createFurSystem } from '@jbcom/strata';
+import { createFurSystem } from '@strata/core';
 
 const fur = createFurSystem({
   density: 1000,
@@ -23,7 +23,7 @@ const fur = createFurSystem({
 ### Basic Fur
 
 ```tsx
-import { FurMesh } from '@jbcom/strata';
+import { FurMesh } from '@strata/core';
 
 <FurMesh
   geometry={animalGeometry}
@@ -168,7 +168,7 @@ More shells = smoother fur, higher performance cost:
 ### Touch Interaction
 
 ```tsx
-import { useFurInteraction } from '@jbcom/strata';
+import { useFurInteraction } from '@strata/core';
 
 function InteractiveFur() {
   const { onPointerMove, deformation } = useFurInteraction();
@@ -223,7 +223,7 @@ import { FurPresets } from '@strata/presets';
 Low-level fur system creation:
 
 ```tsx
-import { createFurSystem } from '@jbcom/strata/core';
+import { createFurSystem } from '@strata/core';
 
 const furSystem = createFurSystem({
   geometry: meshGeometry,

@@ -95,7 +95,7 @@ AudioPresets.OCEAN = {
 ## Using with Components
 
 ```tsx
-import { AudioSystem, SpatialSound } from '@jbcom/strata';
+import { AudioSystem, SpatialSound } from '@strata/core';
 import { AudioPresets } from '@strata/presets/audio';
 
 <AudioSystem {...AudioPresets.FOREST}>

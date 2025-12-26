@@ -38,7 +38,7 @@ Realistic water rendering featuring Gerstner wave simulation, Fresnel-based refl
 
 ```tsx
 import { Canvas } from '@react-three/fiber';
-import { AdvancedWater, ProceduralSky } from '@jbcom/strata';
+import { AdvancedWater, ProceduralSky } from '@strata/core';
 import { OrbitControls } from '@react-three/drei';
 
 function WaterDemo() {

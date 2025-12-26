@@ -10,7 +10,7 @@ Strata's character system provides articulated characters with inverse kinematic
 ## Quick Start
 
 ```tsx
-import { Character, createWalkCycle } from '@jbcom/strata';
+import { Character, createWalkCycle } from '@strata/core';
 
 <Character 
   model={characterModel}
@@ -25,7 +25,7 @@ import { Character, createWalkCycle } from '@jbcom/strata';
 Complete character controller with animation:
 
 ```tsx
-import { Character } from '@jbcom/strata';
+import { Character } from '@strata/core';
 
 <Character
   // Model
@@ -61,7 +61,7 @@ import { Character } from '@jbcom/strata';
 Inverse kinematics for limbs:
 
 ```tsx
-import { IKChain } from '@jbcom/strata';
+import { IKChain } from '@strata/core';
 
 <IKChain
   // Chain definition
@@ -84,7 +84,7 @@ import { IKChain } from '@jbcom/strata';
 ### Procedural Walk Cycle
 
 ```tsx
-import { createWalkCycle, createRunCycle } from '@jbcom/strata';
+import { createWalkCycle, createRunCycle } from '@strata/core';
 
 const walk = createWalkCycle({
   speed: 1,
@@ -106,7 +106,7 @@ const run = createRunCycle({
 ### Animation Blending
 
 ```tsx
-import { useAnimationBlend } from '@jbcom/strata';
+import { useAnimationBlend } from '@strata/core';
 
 function AnimatedCharacter() {
   const { blend, setWeight } = useAnimationBlend({
@@ -127,7 +127,7 @@ function AnimatedCharacter() {
 ### State Machine
 
 ```tsx
-import { createAnimationStateMachine } from '@jbcom/strata';
+import { createAnimationStateMachine } from '@strata/core';
 
 const stateMachine = createAnimationStateMachine({
   initial: 'idle',
@@ -216,7 +216,7 @@ const targetRef = useRef();
 ### Ragdoll
 
 ```tsx
-import { Ragdoll } from '@jbcom/strata';
+import { Ragdoll } from '@strata/core';
 
 <Ragdoll
   model={characterModel}
@@ -244,7 +244,7 @@ import { Ragdoll } from '@jbcom/strata';
 ### Character Controller
 
 ```tsx
-import { CharacterController } from '@jbcom/strata';
+import { CharacterController } from '@strata/core';
 
 <CharacterController
   // Capsule shape
@@ -317,7 +317,7 @@ const quadruped = createCreaturePreset({
 ### Crowd Rendering
 
 ```tsx
-import { CharacterCrowd } from '@jbcom/strata';
+import { CharacterCrowd } from '@strata/core';
 
 <CharacterCrowd
   count={100}

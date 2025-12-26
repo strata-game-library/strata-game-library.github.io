@@ -38,7 +38,7 @@ Procedural terrain generation using Signed Distance Functions (SDFs) and the Mar
 
 ```tsx
 import { Canvas } from '@react-three/fiber';
-import { Terrain } from '@jbcom/strata';
+import { Terrain } from '@strata/core';
 import { OrbitControls } from '@react-three/drei';
 
 function TerrainDemo() {

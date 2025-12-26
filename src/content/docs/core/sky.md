@@ -10,7 +10,7 @@ Strata's sky system provides physically-based atmospheric scattering with a dyna
 ## Quick Start
 
 ```tsx
-import { ProceduralSky } from '@jbcom/strata';
+import { ProceduralSky } from '@strata/core';
 
 <ProceduralSky sunPosition={[100, 50, 100]} />
 ```
@@ -22,7 +22,7 @@ import { ProceduralSky } from '@jbcom/strata';
 Complete procedural sky with all features:
 
 ```tsx
-import { ProceduralSky, createTimeOfDay } from '@jbcom/strata';
+import { ProceduralSky, createTimeOfDay } from '@strata/core';
 
 <ProceduralSky
   // Sun position (can use sunPosition or timeOfDay)
@@ -82,7 +82,7 @@ import { ProceduralSky, createTimeOfDay } from '@jbcom/strata';
 ### Using `createTimeOfDay`
 
 ```tsx
-import { createTimeOfDay } from '@jbcom/strata';
+import { createTimeOfDay } from '@strata/core';
 
 // Specific time
 const noon = createTimeOfDay(12, 0);      // 12:00 PM
@@ -96,7 +96,7 @@ const midnight = createTimeOfDay(0, 0);   // 12:00 AM
 
 ```tsx
 import { useState, useEffect } from 'react';
-import { createTimeOfDay } from '@jbcom/strata';
+import { createTimeOfDay } from '@strata/core';
 
 function AnimatedSky() {
   const [hour, setHour] = useState(12);
@@ -123,7 +123,7 @@ function AnimatedSky() {
 ### Geographic Sun Position
 
 ```tsx
-import { calculateSunPosition } from '@jbcom/strata/core';
+import { calculateSunPosition } from '@strata/core';
 
 const sunPos = calculateSunPosition({
   latitude: 40.7128,    // NYC
@@ -306,7 +306,7 @@ import { SkyPresets } from '@strata/presets';
 The sky automatically provides scene lighting:
 
 ```tsx
-import { ProceduralSky, SkyLight } from '@jbcom/strata';
+import { ProceduralSky, SkyLight } from '@strata/core';
 
 <ProceduralSky timeOfDay={createTimeOfDay(14, 0)}>
   {/* Directional light follows sun */}

@@ -54,7 +54,7 @@ Strata is the Games & Procedural division of the [jbcom enterprise](https://jbco
 
 <CardGrid>
   <LinkCard
-    title="@jbcom/strata"
+    title="@strata/core"
     description="Core library - terrain, water, vegetation, sky, characters, and more"
     href="/core/"
   />
@@ -80,12 +80,12 @@ Strata is the Games & Procedural division of the [jbcom enterprise](https://jbco
 ## Quick Start
 
 ```bash
-pnpm install @jbcom/strata @react-three/fiber @react-three/drei three
+pnpm install @strata/core @react-three/fiber @react-three/drei three
 ```
 
 ```tsx
 import { Canvas } from '@react-three/fiber';
-import { Water, ProceduralSky, GrassInstances, VolumetricFogMesh } from '@jbcom/strata';
+import { Water, ProceduralSky, GrassInstances, VolumetricFogMesh } from '@strata/core';
 
 function Game() {
   return (
@@ -150,7 +150,7 @@ Strata is organized into three layers, each building on the previous:
 <div class="layer-stack">
   <div class="layer layer-4">Layer 4: Presets & Game Framework</div>
   <div class="layer layer-3">Layer 3: React Three Fiber Components</div>
-  <div class="layer layer-2">Layer 2: Core Algorithms (SDF, Noise, Marching Cubes)</div>
+  <div class="layer layer-2">Layer 2: Core Algorithms (SDF, Noise, Marching Cubes, Materials)</div>
   <div class="layer layer-1">Layer 1: GLSL Shaders</div>
   <div class="layer layer-0">Layer 0: TypeScript Types & Utilities</div>
 </div>

@@ -10,7 +10,7 @@ Strata provides GPU-accelerated ray marching for rendering complex procedural ge
 ## Quick Start
 
 ```tsx
-import { Raymarching } from '@jbcom/strata';
+import { Raymarching } from '@strata/core';
 
 <Raymarching />
 ```
@@ -22,7 +22,7 @@ import { Raymarching } from '@jbcom/strata';
 Full-screen ray marching renderer:
 
 ```tsx
-import { Raymarching } from '@jbcom/strata';
+import { Raymarching } from '@strata/core';
 
 <Raymarching
   // SDF scene
@@ -65,7 +65,7 @@ import {
   sdTorus,
   sdCone,
   sdCylinder
-} from '@jbcom/strata/core';
+} from '@strata/core';
 
 // Sphere
 const sphere = sdSphere(point, center, radius);
@@ -99,7 +99,7 @@ import {
   opSmoothUnion,
   opSmoothSubtraction,
   opSmoothIntersection
-} from '@jbcom/strata/core';
+} from '@strata/core';
 
 // Boolean operations
 const union = opUnion(d1, d2);
@@ -121,7 +121,7 @@ import {
   opTwist,
   opBend,
   opDisplace
-} from '@jbcom/strata/core';
+} from '@strata/core';
 
 // Infinite repetition
 const repeated = opRepeat(point, spacing);
@@ -314,7 +314,7 @@ function AnimatedRaymarching() {
 Use ray marching shaders directly:
 
 ```tsx
-import { createRaymarchingMaterial } from '@jbcom/strata/core';
+import { createRaymarchingMaterial } from '@strata/core';
 
 const material = createRaymarchingMaterial({
   sdfFunction: `

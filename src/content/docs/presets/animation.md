@@ -97,7 +97,7 @@ AnimationPresets.QUADRUPED_RUN = {
 ## Using with Components
 
 ```tsx
-import { Character } from '@jbcom/strata';
+import { Character } from '@strata/core';
 import { AnimationPresets } from '@strata/presets/animation';
 
 <Character 

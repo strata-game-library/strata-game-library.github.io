@@ -14,7 +14,7 @@ React hooks provided by Strata packages.
 Blend multiple animations with weighted mixing.
 
 ```tsx
-import { useAnimationBlend } from '@jbcom/strata';
+import { useAnimationBlend } from '@strata/core';
 
 function Character() {
   const { blend, setWeight } = useAnimationBlend({
@@ -44,7 +44,7 @@ function Character() {
 Handle touch/mouse interaction with fur.
 
 ```tsx
-import { useFurInteraction } from '@jbcom/strata';
+import { useFurInteraction } from '@strata/core';
 
 function InteractiveFur() {
   const { onPointerMove, deformation } = useFurInteraction();

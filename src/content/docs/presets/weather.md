@@ -211,7 +211,7 @@ interface WeatherPresetOptions {
 ## Using with Components
 
 ```tsx
-import { WeatherSystem } from '@jbcom/strata';
+import { WeatherSystem } from '@strata/core';
 import { WeatherPresets } from '@strata/presets/weather';
 
 function Scene() {

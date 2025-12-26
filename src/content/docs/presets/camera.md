@@ -94,7 +94,7 @@ CameraPresets.CINEMATIC = {
 ## Using with Components
 
 ```tsx
-import { CameraController } from '@jbcom/strata';
+import { CameraController } from '@strata/core';
 import { CameraPresets } from '@strata/presets/camera';
 
 <CameraController 

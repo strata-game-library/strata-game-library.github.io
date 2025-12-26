@@ -33,7 +33,7 @@ function App() {
 Import and add the `ProceduralSky` component:
 
 ```tsx
-import { ProceduralSky } from '@jbcom/strata';
+import { ProceduralSky } from '@strata/core';
 
 function Scene() {
   return (
@@ -55,7 +55,7 @@ The sky automatically includes:
 Add a water plane with realistic rendering:
 
 ```tsx
-import { Water } from '@jbcom/strata';
+import { Water } from '@strata/core';
 
 function Scene() {
   return (
@@ -81,7 +81,7 @@ The water includes:
 Populate your scene with GPU-instanced vegetation:
 
 ```tsx
-import { GrassInstances, TreeInstances, RockInstances } from '@jbcom/strata';
+import { GrassInstances, TreeInstances, RockInstances } from '@strata/core';
 
 function Scene() {
   return (
@@ -124,7 +124,7 @@ All vegetation includes:
 Enhance the atmosphere with fog and effects:
 
 ```tsx
-import { VolumetricFogMesh, EnhancedFog } from '@jbcom/strata';
+import { VolumetricFogMesh, EnhancedFog } from '@strata/core';
 
 function Scene() {
   return (
@@ -159,7 +159,7 @@ import {
   TreeInstances,
   RockInstances,
   VolumetricFogMesh
-} from '@jbcom/strata';
+} from '@strata/core';
 
 function Scene() {
   return (
@@ -227,7 +227,7 @@ In under 50 lines of code, you created:
 
 ```tsx
 import { useState, useEffect } from 'react';
-import { createTimeOfDay } from '@jbcom/strata';
+import { createTimeOfDay } from '@strata/core';
 
 function DynamicSky() {
   const [hour, setHour] = useState(14);

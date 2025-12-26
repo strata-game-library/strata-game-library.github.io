@@ -10,7 +10,7 @@ Strata provides specialized rendering for molecular structures, particle systems
 ## Quick Start
 
 ```tsx
-import { MoleculeRenderer } from '@jbcom/strata';
+import { MoleculeRenderer } from '@strata/core';
 
 <MoleculeRenderer 
   atoms={moleculeData.atoms}
@@ -25,7 +25,7 @@ import { MoleculeRenderer } from '@jbcom/strata';
 Render molecular structures:
 
 ```tsx
-import { MoleculeRenderer } from '@jbcom/strata';
+import { MoleculeRenderer } from '@strata/core';
 
 <MoleculeRenderer
   // Data
@@ -60,7 +60,7 @@ import { MoleculeRenderer } from '@jbcom/strata';
 GPU-instanced atomic particles:
 
 ```tsx
-import { AtomicParticles } from '@jbcom/strata';
+import { AtomicParticles } from '@strata/core';
 
 <AtomicParticles
   count={10000}
@@ -216,7 +216,7 @@ Secondary structure visualization:
 ### PDB Files
 
 ```tsx
-import { loadPDB } from '@jbcom/strata/molecular';
+import { loadPDB } from '@strata/core/molecular';
 
 const molecule = await loadPDB('/proteins/1crn.pdb');
 
@@ -231,7 +231,7 @@ const molecule = await loadPDB('/proteins/1crn.pdb');
 ### SDF/MOL Files
 
 ```tsx
-import { loadSDF } from '@jbcom/strata/molecular';
+import { loadSDF } from '@strata/core/molecular';
 
 const molecule = await loadSDF('/molecules/caffeine.sdf');
 
@@ -244,7 +244,7 @@ const molecule = await loadSDF('/molecules/caffeine.sdf');
 ### XYZ Files
 
 ```tsx
-import { loadXYZ } from '@jbcom/strata/molecular';
+import { loadXYZ } from '@strata/core/molecular';
 
 const trajectory = await loadXYZ('/trajectories/water.xyz');
 
@@ -258,7 +258,7 @@ const trajectory = await loadXYZ('/trajectories/water.xyz');
 ### Electron Cloud
 
 ```tsx
-import { ElectronCloud } from '@jbcom/strata';
+import { ElectronCloud } from '@strata/core';
 
 <ElectronCloud
   nucleusPosition={[0, 0, 0]}
@@ -279,7 +279,7 @@ import { ElectronCloud } from '@jbcom/strata';
 ### Particle Field
 
 ```tsx
-import { ParticleField } from '@jbcom/strata';
+import { ParticleField } from '@strata/core';
 
 <ParticleField
   count={5000}
@@ -314,7 +314,7 @@ import { ParticleField } from '@jbcom/strata';
 ### Isosurfaces
 
 ```tsx
-import { Isosurface } from '@jbcom/strata';
+import { Isosurface } from '@strata/core';
 
 <Isosurface
   data={volumetricData}
@@ -331,7 +331,7 @@ import { Isosurface } from '@jbcom/strata';
 ### Vector Fields
 
 ```tsx
-import { VectorField } from '@jbcom/strata';
+import { VectorField } from '@strata/core';
 
 <VectorField
   data={vectorFieldData}

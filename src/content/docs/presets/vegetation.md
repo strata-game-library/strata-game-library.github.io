@@ -190,7 +190,7 @@ interface VegetationPresetOptions {
 ## Using with Components
 
 ```tsx
-import { GrassInstances, TreeInstances, RockInstances } from '@jbcom/strata';
+import { GrassInstances, TreeInstances, RockInstances } from '@strata/core';
 import { VegetationPresets } from '@strata/presets/vegetation';
 
 function Forest() {
