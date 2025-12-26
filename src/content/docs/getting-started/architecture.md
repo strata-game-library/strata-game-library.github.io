@@ -245,31 +245,60 @@ import {
 } from '@jbcom/strata/game';
 ```
 
-## Module Exports
+## Package Structure
 
-Import from the main package or specific submodules:
+Strata is organized as multiple packages for flexibility:
+
+### Main Package (`@jbcom/strata`)
+
+The core library with components, algorithms, and utilities:
 
 ```tsx
-// Main package - all exports
-import { Water, ProceduralSky } from '@jbcom/strata';
+// Main package - components
+import { Water, ProceduralSky, Terrain, GrassInstances } from '@jbcom/strata';
 
-// Core algorithms only
-import { marchingCubes, noise3D } from '@jbcom/strata/core';
+// Subpath: Core algorithms
+import { marchingCubes, noise3D, sdSphere } from '@jbcom/strata/core';
 
-// Components only
-import { GrassInstances } from '@jbcom/strata/components';
+// Subpath: Utility functions
+import { clamp, lerp, smoothstep } from '@jbcom/strata/utils';
 
-// Shaders only
-import * as shaders from '@jbcom/strata/shaders';
+// Subpath: TypeScript types
+import type { BiomeConfig, WaterConfig } from '@jbcom/strata/types';
+```
 
-// Utils only
-import * as utils from '@jbcom/strata/utils';
+### Shaders Package (`@strata/shaders`)
 
-// Presets only
-import * as presets from '@jbcom/strata/presets';
+Standalone GLSL shaders (works with any Three.js project):
 
-// Types only
-import type { BiomeConfig } from '@jbcom/strata/types';
+```tsx
+import { 
+  waterVertexShader, 
+  waterFragmentShader,
+  skyVertexShader,
+  skyFragmentShader 
+} from '@strata/shaders';
+```
+
+### Presets Package (`@strata/presets`)
+
+Pre-configured settings (requires `@jbcom/strata`):
+
+```tsx
+import { createTerrainPreset, TerrainBiomes } from '@strata/presets/terrain';
+import { createWaterPreset, WaterTypes } from '@strata/presets/water';
+```
+
+### Mobile Plugins
+
+Platform-specific capabilities:
+
+```tsx
+// React Native
+import { useDevice, useHaptics } from '@strata/react-native-plugin';
+
+// Capacitor (Web/iOS/Android/Electron)
+import { useDevice, useInput } from '@strata/capacitor-plugin/react';
 ```
 
 ## Directory Structure
