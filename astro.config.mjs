@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { sidebar } from './sidebar.config.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,37 +9,32 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Strata',
-			description: 'Procedural worlds, infinite possibilities',
+			description: 'Layer by Layer, World by World - Procedural 3D graphics library for React Three Fiber',
 			customCss: ['./src/styles/custom.css'],
-			social: {
-				github: 'https://github.com/jbcom',
+			logo: {
+				light: './src/assets/strata-logo.svg',
+				dark: './src/assets/strata-logo.svg',
 			},
-    sidebar: [
-      {
-        label: 'Getting Started',
-        autogenerate: { directory: 'getting-started' },
-      },
-      {
-        label: 'API Reference',
-        autogenerate: { directory: 'api-reference' },
-      },
-      {
-        label: 'Examples and Tutorials',
-        autogenerate: { directory: 'examples-and-tutorials' },
-      },
-      {
-        label: 'Package Docs',
-        autogenerate: { directory: 'package-docs' },
-      },
-      {
-        label: 'Enterprise',
-        items: [
-          { label: 'jbcom Hub', link: 'https://jbcom.github.io' },
-          { label: 'Agentic (AI)', link: 'https://agentic.dev' },
-          { label: 'Extended Data (Infra)', link: 'https://extendeddata.dev' },
-        ],
-      },
-    ],
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/strata-game-library' },
+			],
+			head: [
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image',
+						content: 'https://strata.game/og-image.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:card',
+						content: 'summary_large_image',
+					},
+				},
+			],
+			sidebar,
 		}),
 	],
 });

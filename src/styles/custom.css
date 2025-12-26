@@ -1,15 +1,493 @@
 /* 
-  Strata Division - Custom Styles
-  Integrated with jbcom Enterprise Branding
+  Strata - Custom Styles
+  Layer by Layer, World by World
+  Brand Guide: https://strata.game/brand
 */
 
-/* 1. Base Enterprise Theme */
-@import 'https://raw.githubusercontent.com/jbcom/jbcom.github.io/main/enterprise-branding/starlight-base.css';
+/* ===== TYPOGRAPHY (must be first) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* 2. Strata (Teal/Cyan) Override */
-@import 'https://raw.githubusercontent.com/jbcom/jbcom.github.io/main/enterprise-branding/org-themes/strata.css';
-
-/* 3. Site-specific overrides */
+/* ===== STRATA BRAND COLORS ===== */
 :root {
-  /* You can add site-specific variables here */
+  /* jbcom Foundation */
+  --sl-color-bg: #0a0f1a;
+  --sl-color-bg-nav: #0d1320;
+  --sl-color-bg-sidebar: #0d1320;
+  --sl-color-bg-inline-code: rgba(6, 182, 212, 0.1);
+  
+  /* Primary Colors */
+  --sl-color-accent: #06b6d4;
+  --sl-color-accent-high: #22d3ee;
+  --sl-color-accent-low: rgba(6, 182, 212, 0.2);
+  
+  /* Text Colors */
+  --sl-color-text: #f1f5f9;
+  --sl-color-text-accent: #06b6d4;
+  
+  /* Strata Feature Colors */
+  --strata-terrain: #78350f;
+  --strata-terrain-light: #a16207;
+  --strata-terrain-dark: #451a03;
+  
+  --strata-water: #0284c7;
+  --strata-water-light: #38bdf8;
+  --strata-water-dark: #075985;
+  
+  --strata-vegetation: #15803d;
+  --strata-vegetation-light: #22c55e;
+  --strata-vegetation-dark: #14532d;
+  
+  --strata-sky: #7c3aed;
+  --strata-sky-light: #a78bfa;
+  --strata-sky-dark: #4c1d95;
+  
+  --strata-game: #eab308;
+  --strata-game-light: #fde047;
+  --strata-game-dark: #b45309;
+  
+  --strata-volumetrics: #ec4899;
+  --strata-characters: #f97316;
+  --strata-shaders: #8b5cf6;
+  
+  /* Gradients */
+  --strata-gradient: linear-gradient(135deg, 
+    var(--strata-terrain) 0%, 
+    var(--strata-water) 25%, 
+    var(--strata-vegetation) 50%, 
+    var(--strata-sky) 75%,
+    var(--sl-color-accent) 100%);
+  
+  --strata-gradient-horizontal: linear-gradient(90deg, 
+    var(--strata-terrain) 0%, 
+    var(--strata-water) 33%, 
+    var(--strata-vegetation) 66%, 
+    var(--strata-sky) 100%);
+}
+
+/* ===== DARK THEME ===== */
+[data-theme='dark'] {
+  --sl-color-bg: #0a0f1a;
+  --sl-color-bg-nav: #0d1320;
+  --sl-color-bg-sidebar: #0d1320;
+  --sl-color-hairline: rgba(6, 182, 212, 0.2);
+  --sl-color-hairline-shade: rgba(6, 182, 212, 0.1);
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+:root {
+  --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+}
+
+h1, h2, h3, h4, h5, h6,
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  font-family: 'Space Grotesk', var(--sl-font);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(180deg, 
+    rgba(6, 182, 212, 0.15) 0%, 
+    rgba(10, 15, 26, 0) 100%);
+  padding-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  color: var(--sl-color-gray-3);
+  max-width: 600px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: linear-gradient(135deg, 
+    rgba(6, 182, 212, 0.05) 0%, 
+    rgba(6, 182, 212, 0.02) 100%);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.15);
+}
+
+/* Feature-specific card accents */
+.card[data-feature="terrain"] {
+  border-left: 4px solid var(--strata-terrain);
+}
+
+.card[data-feature="water"] {
+  border-left: 4px solid var(--strata-water);
+}
+
+.card[data-feature="vegetation"] {
+  border-left: 4px solid var(--strata-vegetation);
+}
+
+.card[data-feature="sky"] {
+  border-left: 4px solid var(--strata-sky);
+}
+
+.card[data-feature="volumetrics"] {
+  border-left: 4px solid var(--strata-volumetrics);
+}
+
+.card[data-feature="characters"] {
+  border-left: 4px solid var(--strata-characters);
+}
+
+/* ===== CODE BLOCKS ===== */
+.expressive-code {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.expressive-code pre {
+  background: #0d1320 !important;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+/* Feature-specific code block accents */
+.code-terrain {
+  border-left: 4px solid var(--strata-terrain) !important;
+}
+
+.code-water {
+  border-left: 4px solid var(--strata-water) !important;
+}
+
+.code-vegetation {
+  border-left: 4px solid var(--strata-vegetation) !important;
+}
+
+.code-sky {
+  border-left: 4px solid var(--strata-sky) !important;
+}
+
+/* ===== NAVIGATION ===== */
+.sidebar-content a[aria-current="page"] {
+  background: rgba(6, 182, 212, 0.15);
+  border-left: 3px solid var(--sl-color-accent);
+}
+
+nav.sidebar a:hover {
+  color: var(--sl-color-accent);
+}
+
+/* ===== SHOWCASE IFRAMES ===== */
+.showcase-iframe {
+  width: 100%;
+  height: 450px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 12px;
+  background: #0d1320;
+  margin: 1.5rem 0;
+}
+
+.showcase-iframe:hover {
+  border-color: var(--sl-color-accent);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.2);
+}
+
+/* ===== FEATURE BADGES ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-terrain {
+  background: rgba(120, 53, 15, 0.2);
+  color: var(--strata-terrain-light);
+  border: 1px solid var(--strata-terrain);
+}
+
+.badge-water {
+  background: rgba(2, 132, 199, 0.2);
+  color: var(--strata-water-light);
+  border: 1px solid var(--strata-water);
+}
+
+.badge-vegetation {
+  background: rgba(21, 128, 61, 0.2);
+  color: var(--strata-vegetation-light);
+  border: 1px solid var(--strata-vegetation);
+}
+
+.badge-sky {
+  background: rgba(124, 58, 237, 0.2);
+  color: var(--strata-sky-light);
+  border: 1px solid var(--strata-sky);
+}
+
+.badge-new {
+  background: rgba(234, 179, 8, 0.2);
+  color: var(--strata-game-light);
+  border: 1px solid var(--strata-game);
+}
+
+/* ===== FEATURE GRID ===== */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, 
+    rgba(6, 182, 212, 0.08) 0%, 
+    rgba(6, 182, 212, 0.02) 100%);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--sl-color-accent);
+  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.2);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-card .icon {
+  font-size: 1.5rem;
+}
+
+/* ===== PACKAGE STATS ===== */
+.package-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(6, 182, 212, 0.1);
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.stat img {
+  height: 20px;
+}
+
+/* ===== TABLE STYLING ===== */
+.sl-markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.sl-markdown-content th {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.sl-markdown-content td {
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  padding: 0.75rem 1rem;
+}
+
+.sl-markdown-content tr:hover {
+  background: rgba(6, 182, 212, 0.05);
+}
+
+/* ===== CALLOUTS ===== */
+.sl-markdown-content .starlight-aside {
+  border-radius: 8px;
+  border-left-width: 4px;
+}
+
+.sl-markdown-content .starlight-aside--tip {
+  border-left-color: var(--strata-vegetation);
+  background: rgba(21, 128, 61, 0.1);
+}
+
+.sl-markdown-content .starlight-aside--note {
+  border-left-color: var(--sl-color-accent);
+  background: rgba(6, 182, 212, 0.1);
+}
+
+.sl-markdown-content .starlight-aside--caution {
+  border-left-color: var(--strata-game);
+  background: rgba(234, 179, 8, 0.1);
+}
+
+/* ===== STRATA LAYERS VISUALIZATION ===== */
+.layer-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.layer {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.layer:hover {
+  transform: translateX(8px);
+}
+
+.layer-0 {
+  background: rgba(6, 182, 212, 0.15);
+  border-left: 4px solid var(--sl-color-accent);
+}
+
+.layer-1 {
+  background: rgba(120, 53, 15, 0.15);
+  border-left: 4px solid var(--strata-terrain);
+  margin-left: 1rem;
+}
+
+.layer-2 {
+  background: rgba(2, 132, 199, 0.15);
+  border-left: 4px solid var(--strata-water);
+  margin-left: 2rem;
+}
+
+.layer-3 {
+  background: rgba(21, 128, 61, 0.15);
+  border-left: 4px solid var(--strata-vegetation);
+  margin-left: 3rem;
+}
+
+.layer-4 {
+  background: rgba(124, 58, 237, 0.15);
+  border-left: 4px solid var(--strata-sky);
+  margin-left: 4rem;
+}
+
+/* ===== DEMO CONTROLS ===== */
+.demo-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.demo-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 6px;
+  color: var(--sl-color-text);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.demo-btn:hover {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: var(--sl-color-accent);
+}
+
+.demo-btn.active {
+  background: var(--sl-color-accent);
+  color: #0a0f1a;
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .showcase-iframe {
+    height: 300px;
+  }
+  
+  .layer {
+    margin-left: 0 !important;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.5);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+footer a {
+  color: var(--sl-color-gray-3);
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--sl-color-accent);
 }
