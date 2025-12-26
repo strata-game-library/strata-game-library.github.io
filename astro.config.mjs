@@ -13,24 +13,32 @@ export default defineConfig({
 			social: {
 				github: 'https://github.com/jbcom',
 			},
-			sidebar: [
-				{
-					label: 'Getting Started',
-					autogenerate: { directory: 'getting-started' },
-				},
-				{
-					label: 'API Reference',
-					autogenerate: { directory: 'api-reference' },
-				},
-				{
-					label: 'Examples and Tutorials',
-					autogenerate: { directory: 'examples-and-tutorials' },
-				},
-				{
-					label: 'Package Docs',
-					autogenerate: { directory: 'package-docs' },
-				},
-			],
+    sidebar: [
+      {
+        label: 'Getting Started',
+        autogenerate: { directory: 'getting-started' },
+      },
+      {
+        label: 'API Reference',
+        autogenerate: { directory: 'api-reference' },
+      },
+      {
+        label: 'Examples and Tutorials',
+        autogenerate: { directory: 'examples-and-tutorials' },
+      },
+      {
+        label: 'Package Docs',
+        autogenerate: { directory: 'package-docs' },
+      },
+      {
+        label: 'Enterprise',
+        items: [
+          { label: 'jbcom Hub', link: 'https://jbcom.github.io' },
+          { label: 'Agentic (AI)', link: 'https://agentic.dev' },
+          { label: 'Extended Data (Infra)', link: 'https://extendeddata.dev' },
+        ],
+      },
+    ],
 		}),
 	],
 });
