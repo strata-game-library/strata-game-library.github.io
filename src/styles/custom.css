@@ -4,6 +4,9 @@
   Brand Guide: https://strata.game/brand
 */
 
+/* ===== TYPOGRAPHY (must be first) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 /* ===== STRATA BRAND COLORS ===== */
 :root {
   /* jbcom Foundation */
@@ -71,7 +74,6 @@
 }
 
 /* ===== TYPOGRAPHY ===== */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
   --sl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
