@@ -10,7 +10,9 @@ export default defineConfig({
 			title: 'Strata',
 			description: 'Procedural worlds, infinite possibilities',
 			customCss: ['./src/styles/custom.css'],
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/strata-game-library' }],
+			social: {
+				github: 'https://github.com/jbcom',
+			},
 			sidebar: [
 				{
 					label: 'Getting Started',

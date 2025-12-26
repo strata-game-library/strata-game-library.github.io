@@ -1,5 +1,15 @@
+/* 
+  Strata Division - Custom Styles
+  Integrated with jbcom Enterprise Branding
+*/
+
+/* 1. Base Enterprise Theme */
+@import 'https://raw.githubusercontent.com/jbcom/jbcom.github.io/main/enterprise-branding/starlight-base.css';
+
+/* 2. Strata (Teal/Cyan) Override */
+@import 'https://raw.githubusercontent.com/jbcom/jbcom.github.io/main/enterprise-branding/org-themes/strata.css';
+
+/* 3. Site-specific overrides */
 :root {
-	--sl-color-accent-low: #10b98120;
-	--sl-color-accent: #10b981;
-	--sl-color-accent-high: #10b981;
+  /* You can add site-specific variables here */
 }
