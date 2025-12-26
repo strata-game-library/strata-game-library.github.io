@@ -19,25 +19,25 @@ Strata requires React Three Fiber and Three.js as peer dependencies. This guide 
 ### Using pnpm (Recommended)
 
 ```bash
-pnpm add @strata/core @react-three/fiber @react-three/drei three
+pnpm add @strata-game-library/core @react-three/fiber @react-three/drei three
 ```
 
 ### Using npm
 
 ```bash
-npm install @strata/core @react-three/fiber @react-three/drei three
+npm install @strata-game-library/core @react-three/fiber @react-three/drei three
 ```
 
 ### Using yarn
 
 ```bash
-yarn add @strata/core @react-three/fiber @react-three/drei three
+yarn add @strata-game-library/core @react-three/fiber @react-three/drei three
 ```
 
 ### Using bun
 
 ```bash
-bun add @strata/core @react-three/fiber @react-three/drei three
+bun add @strata-game-library/core @react-three/fiber @react-three/drei three
 ```
 
 ## TypeScript Support
@@ -55,7 +55,7 @@ pnpm add -D @types/three
 If you only need the GLSL shaders (no React dependencies):
 
 ```bash
-pnpm add @strata/shaders
+pnpm add @strata-game-library/shaders
 ```
 
 ### Presets Only
@@ -63,7 +63,7 @@ pnpm add @strata/shaders
 For pre-configured terrain, weather, and effects:
 
 ```bash
-pnpm add @strata/presets @strata/core
+pnpm add @strata-game-library/presets @strata-game-library/core
 ```
 
 ### Mobile Plugins
@@ -71,14 +71,14 @@ pnpm add @strata/presets @strata/core
 For React Native projects:
 
 ```bash
-npm install @strata/react-native-plugin
+npm install @strata-game-library/react-native-plugin
 cd ios && pod install
 ```
 
 For Capacitor projects:
 
 ```bash
-pnpm add @strata/capacitor-plugin
+pnpm add @strata-game-library/capacitor-plugin
 npx cap sync
 ```
 
@@ -121,7 +121,7 @@ Create a simple test scene to verify everything is working:
 
 ```tsx
 import { Canvas } from '@react-three/fiber';
-import { Water, ProceduralSky } from '@strata/core';
+import { Water, ProceduralSky } from '@strata-game-library/core';
 import { OrbitControls } from '@react-three/drei';
 
 function App() {

@@ -54,17 +54,17 @@ Strata is the Games & Procedural division of the [jbcom enterprise](https://jbco
 
 <CardGrid>
   <LinkCard
-    title="@strata/core"
+    title="@strata-game-library/core"
     description="Core library - terrain, water, vegetation, sky, characters, and more"
     href="/core/"
   />
   <LinkCard
-    title="@strata/shaders"
+    title="@strata-game-library/shaders"
     description="Standalone GLSL shader collection for any Three.js project"
     href="/shaders/"
   />
   <LinkCard
-    title="@strata/presets"
+    title="@strata-game-library/presets"
     description="Ready-to-use configurations for all Strata systems"
     href="/presets/"
   />
@@ -80,12 +80,12 @@ Strata is the Games & Procedural division of the [jbcom enterprise](https://jbco
 ## Quick Start
 
 ```bash
-pnpm install @strata/core @react-three/fiber @react-three/drei three
+pnpm install @strata-game-library/core @react-three/fiber @react-three/drei three
 ```
 
 ```tsx
 import { Canvas } from '@react-three/fiber';
-import { Water, ProceduralSky, GrassInstances, VolumetricFogMesh } from '@strata/core';
+import { Water, ProceduralSky, GrassInstances, VolumetricFogMesh } from '@strata-game-library/core';
 
 function Game() {
   return (

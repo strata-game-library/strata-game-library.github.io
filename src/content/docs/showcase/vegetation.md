@@ -38,7 +38,7 @@ GPU-accelerated instancing capable of rendering 10,000+ instances of grass, tree
 
 ```tsx
 import { Canvas } from '@react-three/fiber';
-import { GrassInstances, TreeInstances, RockInstances, ProceduralSky } from '@strata/core';
+import { GrassInstances, TreeInstances, RockInstances, ProceduralSky } from '@strata-game-library/core';
 import { OrbitControls } from '@react-three/drei';
 
 function VegetationDemo() {

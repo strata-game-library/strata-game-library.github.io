@@ -38,7 +38,7 @@ Physically-based atmospheric scattering with dynamic day/night cycle, stars, vol
 
 ```tsx
 import { Canvas } from '@react-three/fiber';
-import { ProceduralSky, VolumetricFogMesh, createTimeOfDay } from '@strata/core';
+import { ProceduralSky, VolumetricFogMesh, createTimeOfDay } from '@strata-game-library/core';
 import { OrbitControls } from '@react-three/drei';
 import { useState, useEffect } from 'react';
 

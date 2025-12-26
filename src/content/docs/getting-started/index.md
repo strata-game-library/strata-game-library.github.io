@@ -21,7 +21,7 @@ The name *Strata* comes from geology: layers of rock or soil with internally con
 SDF-based terrain generation using marching cubes algorithm with triplanar texturing and multi-biome blending.
 
 ```tsx
-import { Terrain } from '@strata/core';
+import { Terrain } from '@strata-game-library/core';
 
 <Terrain 
   biomes={['grassland', 'mountain', 'desert']}
@@ -34,7 +34,7 @@ import { Terrain } from '@strata/core';
 Realistic water rendering with Gerstner wave simulation, Fresnel-based reflections, procedural foam, and underwater caustics.
 
 ```tsx
-import { Water, AdvancedWater } from '@strata/core';
+import { Water, AdvancedWater } from '@strata-game-library/core';
 
 <Water size={200} depth={20} />
 <AdvancedWater size={200} waveHeight={2} reflections caustics />
@@ -44,7 +44,7 @@ import { Water, AdvancedWater } from '@strata/core';
 GPU-accelerated instancing capable of rendering 10,000+ instances at 60fps with procedural wind animation.
 
 ```tsx
-import { GrassInstances, TreeInstances, RockInstances } from '@strata/core';
+import { GrassInstances, TreeInstances, RockInstances } from '@strata-game-library/core';
 
 <GrassInstances count={10000} spread={100} />
 <TreeInstances count={500} spread={200} />
@@ -55,7 +55,7 @@ import { GrassInstances, TreeInstances, RockInstances } from '@strata/core';
 Physically-based atmospheric scattering with dynamic day/night cycle, stars, and sun/moon positioning.
 
 ```tsx
-import { ProceduralSky, createTimeOfDay } from '@strata/core';
+import { ProceduralSky, createTimeOfDay } from '@strata-game-library/core';
 
 <ProceduralSky timeOfDay={createTimeOfDay(14, 30)} />
 ```
@@ -64,7 +64,7 @@ import { ProceduralSky, createTimeOfDay } from '@strata/core';
 God rays, volumetric fog, underwater overlays, and atmospheric effects.
 
 ```tsx
-import { VolumetricFogMesh, UnderwaterOverlay, EnhancedFog } from '@strata/core';
+import { VolumetricFogMesh, UnderwaterOverlay, EnhancedFog } from '@strata-game-library/core';
 
 <VolumetricFogMesh density={0.02} color="#8899aa" />
 <UnderwaterOverlay depth={10} />
@@ -74,7 +74,7 @@ import { VolumetricFogMesh, UnderwaterOverlay, EnhancedFog } from '@strata/core'
 Articulated character system with IK chains, procedural walk cycles, and physics integration.
 
 ```tsx
-import { Character, createWalkCycle } from '@strata/core';
+import { Character, createWalkCycle } from '@strata-game-library/core';
 
 <Character 
   model={characterModel}
@@ -88,11 +88,11 @@ Strata is organized into several focused packages:
 
 | Package | Description | NPM |
 |---------|-------------|-----|
-| `@strata/core` | Core library with all features | [![npm](https://img.shields.io/npm/v/@strata/core.svg)](https://www.npmjs.com/package/@strata/core) |
-| `@strata/shaders` | Standalone GLSL shader collection | [![npm](https://img.shields.io/npm/v/@strata/shaders.svg)](https://www.npmjs.com/package/@strata/shaders) |
-| `@strata/presets` | Ready-to-use configurations | [![npm](https://img.shields.io/npm/v/@strata/presets.svg)](https://www.npmjs.com/package/@strata/presets) |
-| `@strata/react-native-plugin` | React Native mobile plugin | [![npm](https://img.shields.io/npm/v/@strata/react-native-plugin.svg)](https://www.npmjs.com/package/@strata/react-native-plugin) |
-| `@strata/capacitor-plugin` | Capacitor mobile plugin | [![npm](https://img.shields.io/npm/v/@strata/capacitor-plugin.svg)](https://www.npmjs.com/package/@strata/capacitor-plugin) |
+| `@strata-game-library/core` | Core library with all features | [![npm](https://img.shields.io/npm/v/@strata-game-library/core.svg)](https://www.npmjs.com/package/@strata-game-library/core) |
+| `@strata-game-library/shaders` | Standalone GLSL shader collection | [![npm](https://img.shields.io/npm/v/@strata-game-library/shaders.svg)](https://www.npmjs.com/package/@strata-game-library/shaders) |
+| `@strata-game-library/presets` | Ready-to-use configurations | [![npm](https://img.shields.io/npm/v/@strata-game-library/presets.svg)](https://www.npmjs.com/package/@strata-game-library/presets) |
+| `@strata-game-library/react-native-plugin` | React Native mobile plugin | [![npm](https://img.shields.io/npm/v/@strata-game-library/react-native-plugin.svg)](https://www.npmjs.com/package/@strata-game-library/react-native-plugin) |
+| `@strata-game-library/capacitor-plugin` | Capacitor mobile plugin | [![npm](https://img.shields.io/npm/v/@strata-game-library/capacitor-plugin.svg)](https://www.npmjs.com/package/@strata-game-library/capacitor-plugin) |
 
 ## Why Strata?
 

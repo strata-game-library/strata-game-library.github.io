@@ -5,20 +5,20 @@ description: Standalone GLSL shader collection for Three.js - terrain, water, cl
 
 # Shaders
 
-The `@strata/shaders` package provides a standalone collection of GLSL shaders that work with any Three.js project—no Strata dependency required.
+The `@strata-game-library/shaders` package provides a standalone collection of GLSL shaders that work with any Three.js project—no Strata dependency required.
 
 ## Installation
 
 ```bash
-npm install @strata/shaders
+npm install @strata-game-library/shaders
 # or
-pnpm add @strata/shaders
+pnpm add @strata-game-library/shaders
 ```
 
 ## Quick Start
 
 ```typescript
-import { waterVertexShader, waterFragmentShader } from '@strata/shaders';
+import { waterVertexShader, waterFragmentShader } from '@strata-game-library/shaders';
 import * as THREE from 'three';
 
 const material = new THREE.ShaderMaterial({
@@ -98,7 +98,7 @@ const material = new THREE.ShaderMaterial({
 ### Water with Animation
 
 ```typescript
-import { waterVertexShader, waterFragmentShader } from '@strata/shaders';
+import { waterVertexShader, waterFragmentShader } from '@strata-game-library/shaders';
 
 const waterMaterial = new THREE.ShaderMaterial({
   vertexShader: waterVertexShader,
@@ -123,7 +123,7 @@ function animate() {
 ### Procedural Sky
 
 ```typescript
-import { skyVertexShader, skyFragmentShader } from '@strata/shaders';
+import { skyVertexShader, skyFragmentShader } from '@strata-game-library/shaders';
 
 const skyMaterial = new THREE.ShaderMaterial({
   vertexShader: skyVertexShader,
@@ -147,7 +147,7 @@ const sky = new THREE.Mesh(
 ### Volumetric Fog
 
 ```typescript
-import { volumetricFogShader } from '@strata/shaders';
+import { volumetricFogShader } from '@strata-game-library/shaders';
 
 const fogMaterial = new THREE.ShaderMaterial({
   vertexShader: volumetricFogShader.vertex,
@@ -167,7 +167,7 @@ const fogMaterial = new THREE.ShaderMaterial({
 Reusable GLSL code chunks:
 
 ```typescript
-import { noiseChunk, fbmChunk, sdfChunk } from '@strata/shaders/chunks';
+import { noiseChunk, fbmChunk, sdfChunk } from '@strata-game-library/shaders/chunks';
 
 // Use in custom shaders
 const customFragment = `
@@ -186,7 +186,7 @@ const customFragment = `
 Full TypeScript definitions included:
 
 ```typescript
-import type { ShaderUniforms, WaterUniforms, SkyUniforms } from '@strata/shaders';
+import type { ShaderUniforms, WaterUniforms, SkyUniforms } from '@strata-game-library/shaders';
 
 const uniforms: WaterUniforms = {
   uTime: { value: 0 },

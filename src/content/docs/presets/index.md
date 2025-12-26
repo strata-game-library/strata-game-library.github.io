@@ -5,22 +5,22 @@ description: Ready-to-use configurations for terrain, weather, water, vegetation
 
 # Presets
 
-The `@strata/presets` package provides ready-to-use configurations for all Strata systems, allowing you to quickly set up professional-quality scenes with sensible defaults.
+The `@strata-game-library/presets` package provides ready-to-use configurations for all Strata systems, allowing you to quickly set up professional-quality scenes with sensible defaults.
 
 ## Installation
 
 ```bash
-npm install @strata/presets @strata/core
+npm install @strata-game-library/presets @strata-game-library/core
 # or
-pnpm add @strata/presets @strata/core
+pnpm add @strata-game-library/presets @strata-game-library/core
 ```
 
 ## Quick Start
 
 ```typescript
-import { createTerrainPreset, TerrainBiomes } from '@strata/presets/terrain';
-import { createWeatherPreset, WeatherPresets } from '@strata/presets/weather';
-import { createWaterPreset, WaterTypes } from '@strata/presets/water';
+import { createTerrainPreset, TerrainBiomes } from '@strata-game-library/presets/terrain';
+import { createWeatherPreset, WeatherPresets } from '@strata-game-library/presets/weather';
+import { createWaterPreset, WaterTypes } from '@strata-game-library/presets/water';
 
 // Create terrain with predefined biomes
 const terrain = createTerrainPreset({
@@ -39,23 +39,23 @@ const water = createWaterPreset(WaterTypes.OCEAN);
 
 | Category | Import | Description |
 |----------|--------|-------------|
-| [Terrain](/presets/terrain/) | `@strata/presets/terrain` | Biomes, heightmaps, texturing |
-| [Weather](/presets/weather/) | `@strata/presets/weather` | Rain, snow, fog, storms |
-| [Water](/presets/water/) | `@strata/presets/water` | Ocean, lake, river, pool |
-| [Vegetation](/presets/vegetation/) | `@strata/presets/vegetation` | Forests, grasslands, gardens |
-| [Clouds](/presets/clouds/) | `@strata/presets/clouds` | Cumulus, stratus, stormy |
-| [Camera](/presets/camera/) | `@strata/presets/camera` | First-person, third-person, cinematic |
-| [Animation](/presets/animation/) | `@strata/presets/animation` | Walk cycles, IK, gaits |
-| [Physics](/presets/physics/) | `@strata/presets/physics` | Collision, buoyancy, wind |
-| [Audio](/presets/audio/) | `@strata/presets/audio` | Ambient, spatial, environment |
+| [Terrain](/presets/terrain/) | `@strata-game-library/presets/terrain` | Biomes, heightmaps, texturing |
+| [Weather](/presets/weather/) | `@strata-game-library/presets/weather` | Rain, snow, fog, storms |
+| [Water](/presets/water/) | `@strata-game-library/presets/water` | Ocean, lake, river, pool |
+| [Vegetation](/presets/vegetation/) | `@strata-game-library/presets/vegetation` | Forests, grasslands, gardens |
+| [Clouds](/presets/clouds/) | `@strata-game-library/presets/clouds` | Cumulus, stratus, stormy |
+| [Camera](/presets/camera/) | `@strata-game-library/presets/camera` | First-person, third-person, cinematic |
+| [Animation](/presets/animation/) | `@strata-game-library/presets/animation` | Walk cycles, IK, gaits |
+| [Physics](/presets/physics/) | `@strata-game-library/presets/physics` | Collision, buoyancy, wind |
+| [Audio](/presets/audio/) | `@strata-game-library/presets/audio` | Ambient, spatial, environment |
 
 ## Using Presets
 
 ### With Components
 
 ```tsx
-import { Terrain, Water, ProceduralSky } from '@strata/core';
-import { TerrainPresets, WaterPresets, SkyPresets } from '@strata/presets';
+import { Terrain, Water, ProceduralSky } from '@strata-game-library/core';
+import { TerrainPresets, WaterPresets, SkyPresets } from '@strata-game-library/presets';
 
 <Terrain {...TerrainPresets.ISLAND} />
 <Water {...WaterPresets.TROPICAL_OCEAN} />
@@ -65,7 +65,7 @@ import { TerrainPresets, WaterPresets, SkyPresets } from '@strata/presets';
 ### Customizing Presets
 
 ```typescript
-import { createTerrainPreset, TerrainBiomes } from '@strata/presets/terrain';
+import { createTerrainPreset, TerrainBiomes } from '@strata-game-library/presets/terrain';
 
 // Start with a preset, then customize
 const customTerrain = createTerrainPreset({
@@ -81,7 +81,7 @@ customTerrain.snowHeight = 80;  // Lower snow line
 ### Combining Presets
 
 ```typescript
-import { createScenePreset } from '@strata/presets';
+import { createScenePreset } from '@strata-game-library/presets';
 
 const forestScene = createScenePreset({
   terrain: 'FOREST_HILLS',
@@ -112,7 +112,7 @@ interface Preset<T> {
 ## Creating Custom Presets
 
 ```typescript
-import { registerPreset } from '@strata/presets';
+import { registerPreset } from '@strata-game-library/presets';
 
 // Register a custom terrain preset
 registerPreset('terrain', 'ALIEN_PLANET', {
@@ -131,7 +131,7 @@ registerPreset('terrain', 'ALIEN_PLANET', {
 });
 
 // Use it like any other preset
-import { TerrainPresets } from '@strata/presets';
+import { TerrainPresets } from '@strata-game-library/presets';
 <Terrain {...TerrainPresets.ALIEN_PLANET} />
 ```
 

@@ -10,7 +10,7 @@ Ready-to-use water configurations for different water body types.
 ## Quick Start
 
 ```typescript
-import { createWaterPreset, WaterTypes, WaterPresets } from '@strata/presets/water';
+import { createWaterPreset, WaterTypes, WaterPresets } from '@strata-game-library/presets/water';
 
 // Use a preset directly
 <Water {...WaterPresets.TROPICAL_OCEAN} />
@@ -196,8 +196,8 @@ interface WaterPresetOptions {
 ## Using with Components
 
 ```tsx
-import { Water, AdvancedWater } from '@strata/core';
-import { WaterPresets } from '@strata/presets/water';
+import { Water, AdvancedWater } from '@strata-game-library/core';
+import { WaterPresets } from '@strata-game-library/presets/water';
 
 function Scene() {
   return (

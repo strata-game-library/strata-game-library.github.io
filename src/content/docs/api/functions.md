@@ -5,7 +5,7 @@ description: Pure TypeScript utility functions API reference
 
 # Core Functions API
 
-Pure TypeScript functions with no React dependencies. Import from `@strata/core`.
+Pure TypeScript functions with no React dependencies. Import from `@strata-game-library/core`.
 
 ## SDF Primitives
 

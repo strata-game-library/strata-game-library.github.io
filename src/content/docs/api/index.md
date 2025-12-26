@@ -11,11 +11,11 @@ This section provides complete API documentation for all Strata packages.
 
 | Package | Description | Docs |
 |---------|-------------|------|
-| `@strata/core` | Core library with components and algorithms | This page |
-| `@strata/shaders` | Standalone GLSL shader collection | [Shaders](/shaders/) |
-| `@strata/presets` | Pre-configured settings | [Presets](/presets/) |
-| `@strata/react-native-plugin` | React Native mobile plugin | [React Native](/mobile/react-native/) |
-| `@strata/capacitor-plugin` | Capacitor mobile plugin | [Capacitor](/mobile/capacitor/) |
+| `@strata-game-library/core` | Core library with components and algorithms | This page |
+| `@strata-game-library/shaders` | Standalone GLSL shader collection | [Shaders](/shaders/) |
+| `@strata-game-library/presets` | Pre-configured settings | [Presets](/presets/) |
+| `@strata-game-library/react-native-plugin` | React Native mobile plugin | [React Native](/mobile/react-native/) |
+| `@strata-game-library/capacitor-plugin` | Capacitor mobile plugin | [Capacitor](/mobile/capacitor/) |
 
 ## Core Package Exports
 
@@ -62,7 +62,7 @@ import {
   // Molecular
   MoleculeRenderer,
   AtomicParticles,
-} from '@strata/core';
+} from '@strata-game-library/core';
 ```
 
 ### Hooks
@@ -71,7 +71,7 @@ import {
 import {
   useAnimationBlend,
   useFurInteraction,
-} from '@strata/core';
+} from '@strata-game-library/core';
 ```
 
 ### Core Functions
@@ -136,7 +136,7 @@ import {
   // Fur
   createFurSystem,
   createGrassGeometry,
-} from '@strata/core';
+} from '@strata-game-library/core';
 ```
 
 ### Types
@@ -169,7 +169,7 @@ import type {
   // General
   Vector3,
   Color,
-} from '@strata/core/types';
+} from '@strata-game-library/core/types';
 ```
 
 ## API Sections
